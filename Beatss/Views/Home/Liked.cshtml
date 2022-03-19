@@ -1,0 +1,236 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Liked";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/LikeCss")
+<link rel="stylesheet" href="https://use.typekit.net/ghm8wqj.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+<title>Beats-Liked</title>
+
+<nav class="top flex align-center">
+    <div class="main" style="color: wheat; margin: 15px;">
+        <div class="Search-bar">
+            <input class="input_box" aria-label="search" type="text" name="box"
+                   placeholder="Search for Artists, Songs, or Podcasts">
+            <button class="submit"><i class="fas fa-search" aria-label="submit-search"></i></button>
+        </div>
+    </div>
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="acc">
+            <img src="~/images/images/2x/baseline_account_circle_white_18dp.png">
+            <ul class="droplog">
+                <li style="color:white;">
+                    <a> @User.Identity.GetUserName()</a>
+                    <ul class="doo">
+                        <li class="li1" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;"><a href="#" style="font-size: 15px; margin-right: 20px;">Profile</a></li>
+                        <li class="li2" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;top: 245%;"><a href="javascript:document.getElementById('logoutForm').submit()" style="font-size: 15px; margin-right: 20px;">Log out</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    }
+</nav>
+<aside>
+    <div class="conta">
+        <img src="~/images/images/cc.png" class="logg">
+        <h1 class="logo">Beats</h1>
+    </div>
+    <ul class="links">
+        <div class="bread">Music</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/outline_explore_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/HomePage" class="light-white-hover" class="ex2">Explore</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/mus.png"></li>
+            <li><a href="https://localhost:44306/Home/Songs" class="light-white-hover" class="ex2">Songs</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_library_music_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Albums" class="light-white-hover" class="ex2">Album</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_star_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Artists" class="light-white-hover" class="ex2">Artists</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_favorite_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Liked" class="light-white-hover" class="ex2">Liked</a></li>
+        </div>
+
+    </ul>
+
+    <ul class="links">
+        <div class="bread">My PlayLists</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+    </ul>
+</aside>
+<div class="ta-app-wrapper">
+    <div class="ta-app">
+        <div class="inner">
+            <div class="topp">
+                <div class="img">
+                    <img src="~/images/images/2x/round_favorite_white_48dp.png" class="im">
+                </div>
+
+                <div class="titles">
+                    <p class="pl">playList</p>
+                    <h1 class="liked">Liked Songs</h1>
+                    <p class="p2">User's name .3 songs</p>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="ic">
+                    <img src="~/images/images/2x/image (1).png" lo>
+                </div>
+                <div class="list">
+                    <ul class="ta-stat-board flex align-center">
+                        <li class="l1">#</li>
+                        <li class="l2">TITLE</li>
+                        <li class="l3">ALBUM</li>
+                        <li class="l4">DATE ADDED</li>
+                        <li class="l5"><img src="~/images/images/2x/twotone_schedule_white_18dp.png" alt=""></li>
+                    </ul>
+                </div>
+                <hr style="color: aliceblue; width: 98%;">
+                <ul class="ta-stat-tracks flex align-center column col-6">
+                    <li class="ll1" style="white-space: nowrap;">1</li>
+                    <div class="pic">
+                        <li class="ll2" style="white-space: nowrap;"><i><img src="~/images/images/Death_of_a_Bachelor.jpg" alt="" style="width: 70px;"></i></li>
+                        <li style="white-space: nowrap;" class="lll2">La Devotee <span>Brendon Urie</span></li>
+                    </div>
+                    <li class="ll3" style="white-space: nowrap;">Death of a Bachelor</li>
+                    <li class="ll4" style="white-space: nowrap;">3 Weeks ago</li>
+                    <div class="pic2">
+                        <li class="lll5" style="white-space: nowrap;"><i><img src="~/images/images/1x/hear.png" alt="" style="width: 70px;"></i></li>
+                        <li class="ll5" style="white-space: nowrap;">3:24</li>
+                    </div>
+                </ul>
+                <ul class="ta-stat-tracks flex align-center column col-6">
+                    <li class="ll1" style="white-space: nowrap;">2</li>
+                    <div class="pic">
+                        <li class="ll2" style="white-space: nowrap;"><i><img src="https://images-na.ssl-images-amazon.com/images/I/41D1u7x8hIL._SY400_.jpg" alt="" style="width: 70px;"></i></li>
+                        <li style="white-space: nowrap;" class="lll2">Alone Again <span>The Weeknd</span></li>
+                    </div>
+                    <li class="ll3" style="white-space: nowrap;">After Hours</li>
+                    <li class="ll4" style="white-space: nowrap;">5 Weeks ago</li>
+                    <div class="pic2">
+                        <li class="lll5" style="white-space: nowrap;"><i><img src="~/images/images/1x/hear.png" alt="" style="width: 70px;"></i></li>
+                        <li class="ll5" style="white-space: nowrap;">4:58</li>
+                    </div>
+                </ul>
+                <ul class="ta-stat-tracks flex align-center column col-6">
+                    <li class="ll1" style="white-space: nowrap;">3</li>
+                    <div class="pic">
+                        <li class="ll2" style="white-space: nowrap;"><i><img src="https://yt3.ggpht.com/ytc/AAUvwnhQURF0r88kVJF6V_AVHZo8YcFFBISbXTge8_PAPw=s900-c-k-c0x00ffffff-no-rj" alt="" style="width: 70px;"></i></li>
+                        <li style="white-space: nowrap;" class="lll2">I Hate EveryBody<span>Halsey</span></li>
+                    </div>
+                    <li class="ll3" style="white-space: nowrap;">Manic</li>
+                    <li class="ll4" style="white-space: nowrap;">12 Weeks ago</li>
+                    <div class="pic2">
+                        <li class="lll5" style="white-space: nowrap;"><i><img src="~/images/images/1x/hear.png" alt="" style="width: 70px;"></i></li>
+                        <li class="ll5" style="white-space: nowrap;">7:35</li>
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+
+<div id="ta-player">
+    <div class="  flex">
+        <section class="ta-player-info flex align-center">
+            <div class="ta-artwork " style="width: 70px;">
+                <img src="~/images/images/Death_of_a_Bachelor.jpg" style="width: 70px;">
+            </div>
+            <div class="ta-meta">
+                <a href="" class="title">La Devotee<span>Bredon Urie</span></a>
+            </div>
+        </section>
+        <section class="ta-player-progress flex align-center">
+            <span class="ta-time-current">
+                0:00
+            </span>
+            <div class="ta-player-progress-wrapper">
+                <div class="ta-player-progress-handler"></div>
+                <div class="ta-player-progress-foreground"></div>
+                <div class="ta-player-progress-background"></div>
+            </div>
+            <span class="ta-time-duration">
+                3:24
+            </span>
+            <section class="ta-player-controls align-center">
+                <button class="ta-prev">
+                    <i>
+                        <img src="~/images/images/1x/sharp_skip_previous_black_18dp.png"
+                             alt="">
+                    </i>
+                </button>
+                <button class="ta-play">
+                    <i>
+                        <img src="~/images/images/1x/sharp_play_arrow_black_18dp.png"
+                             alt="">
+                    </i>
+                </button>
+                <button class="ta-next">
+                    <i>
+                        <img src="~/images/images/1x/sharp_skip_next_black_18dp.png"
+                             alt="">
+                    </i>
+                </button>
+            </section>
+            <section class="ta-player-cont align-center">
+                <button class="ta-repeat">
+                    <i>
+                        <img src="~/images/images/1x/sharp_repeat_black_18dp.png"
+                             alt="">
+                    </i>
+                </button>
+                <button class="ta-shuffle">
+                    <i>
+                        <img src="~/images/images/1x/sharp_shuffle_black_18dp.png"
+                             alt="">
+                    </i>
+                </button>
+                <button class="ta-addplaylist">
+                    <i>
+                        <img src="~/images/images/1x/sharp_playlist_add_black_18dp.png"
+                             alt="">
+                    </i>
+                </button>
+                <button class="ta-liked">
+                    <i>
+                        <img src="~/images/images/1x/sharp_favorite_black_18dp.png"
+                             alt="">
+                    </i>
+                </button>
+            </section>
+        </section>
+    </div>
+</div>
+
+
+

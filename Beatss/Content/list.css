@@ -1,0 +1,299 @@
+
+body 
+{
+    font-family:'Proxima Nova';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100vh;
+}
+::-webkit-scrollbar
+{
+    width: 10px;
+    z-index: 999;
+    padding: 10px;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: rgb(17, 47, 80);
+    box-shadow: rgb(17, 77, 117);
+    border-radius: 6px;
+    min-height: 50px;
+}
+.main
+{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 25%;
+    left: 20%;
+    display: flex;  
+  
+}
+.Search-bar
+{
+    
+    display: flex;
+    border: 3px solid #41709e;
+    width: 500px;
+    border-radius:50px ;
+   
+}
+.acc
+{
+    width: 186px;
+    height: 45px;
+    margin-top: 10px;
+    border: 3px solid  #41709e;
+    border-radius: 50px;
+    margin-left: 1000px;
+    position: relatiave;
+    display: flex;
+}
+.dropdownlist
+{
+    display: flex;
+}
+.dropdown 
+{
+    position: absolute;
+    top: 65px;
+    left: 82%;
+    background-color: white;
+    border-radius: 5px;
+    background-color: #89b6db;
+    
+}
+.fas
+{
+    margin-right: 10px;
+}
+.dropdown::before
+{
+ content: "";
+ position: absolute;
+ top: -18%;
+ left: 90%;
+ transform: translateX(-50%);
+ border: 10px solid;
+ border-color: transparent transparent  #89b6db transparent;
+
+}
+div.btn
+{
+    background: transparent;
+    position: relative;
+    border-radius: 50px;
+    width: 143px;
+    border: none;
+    color: white;
+    border: 0;
+    display: flex;
+    margin-left: 10px;
+}
+div.btn:hover
+{
+ color: #ddcdcd;
+}
+.input_box
+{
+    border: 0;
+    padding: 0 0.5em;
+    flex-grow: 1;
+    border-radius: 30px;
+
+}
+.input_box:focus
+{
+    outline: 0;
+}
+.submit
+{
+    cursor: pointer;
+    border: 0;
+    border-radius: 50px;
+    color: rgb(21, 44, 247);
+    border-radius: 50px;
+    font-size: 0.5rem;
+
+}
+.submit:focus
+{
+    outline: 0;
+}
+.justify-end
+{
+    justify-content: flex-end;
+}
+.flex-column
+{
+    flex-direction: column;
+}
+.align-end
+{
+    align-items: flex-end;
+}
+.justify-center
+{
+    justify-content: center;
+}
+button
+{
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+}
+
+.columns
+{
+    padding: 7px;
+}
+.column
+{
+    padding: 10px;
+    flex: 1;
+    display: inline-flex;
+    margin-right: -4px;
+    vertical-align: top;
+}
+.ta-app-wrapper
+{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right,#062a49 9%,#010e18);
+    padding-top: 70px;
+    padding-left:230px ;
+    overflow: hidden;
+}
+.ta-app
+{
+    width: 100%;
+    height: 100%;
+    background-color:#062a49 9%,#010e18;
+    padding:20px;
+    overflow-y: auto;
+}
+.flex
+{display: flex;}
+
+@font-face {
+    font-family:playball ;
+    src: url("fonts//Playball-Regular.ttf");
+}
+.dropdown ul li.active 
+{
+    display: block;
+}
+.ta-list-tittle
+{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 5px;
+    font-size: 28px;
+    color: rgb(160, 197, 245);
+    display: flex;
+
+}
+.light-white-hover
+{
+    color: rgb(188, 201, 206);  
+}
+.light-white-hover:hover
+{
+    color: white;
+}
+.white-primary-hover
+{
+    color: white;
+}
+.white-primary-hover:hover
+{
+    color: #aaa;
+}
+nav.top
+{
+    width:calc(100% - 230.5px ) ;
+    height: 70px;
+    background-color:#03192e;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+section.right
+{
+    width: 100%;
+}
+aside
+{
+    height: 100%;
+    background-color:#03192e ;
+    width: 230px;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.conta
+{
+    display: flex;
+    margin: 5%;
+    margin-bottom: 10%;
+}
+
+.logo
+{
+ 
+  
+    font-size: 50px;
+    color: rgb(210, 222, 226);
+    font-family: playball;
+    font-weight: bolder;
+    font-size: larger;
+}
+.bread
+{
+    color: rgb(177, 201, 233);
+    font-weight: 500;
+    font-size: 24px;
+    margin-left:-15px;
+}
+ul
+{
+  list-style-type: none;  
+  display: block;
+
+}
+li
+{
+    margin: 8px -5px;
+    display: flex;
+    
+}
+a
+{
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500px;
+}
+a:hover
+{
+    color: #f7d9d9;
+}
+a.active
+{
+    color: #7c4a4a;
+}
+i
+{
+    margin-top: 6.5px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    font-size: 16.5px;
+}
+
+ 

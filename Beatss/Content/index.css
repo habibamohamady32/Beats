@@ -1,0 +1,113 @@
+@font-face {
+    font-family: Gotham;
+    src: url("../fonts/fonts/Gotham-Font/GothamBold.ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    font-family: Gotham;
+}
+
+.leftside, .rightside {
+    height: 100vh;
+    width: 100%;
+}
+
+.leftside {
+    background-color: #031C32;
+}
+
+.rightside {
+    background-color: #5B051E;
+}
+
+@font-face {
+    font-family: playball;
+    src: url("../fonts/fonts/Playball-Regular.ttf");
+}
+
+.contain {
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+    padding-top: 35%;
+}
+
+img {
+    max-width: 85%;
+}
+
+h1 {
+    color: #EBCACA;
+    font-family: playball;
+    text-shadow: #EBCACA;
+    font-weight: bolder;
+    font-size: 150px;
+    text-shadow: #EBCACA;
+}
+
+ul {
+    margin-left: 5%;
+}
+
+    ul li {
+        text-align: center;
+        text-decoration: none;
+        list-style: none;
+        display: inline-block;
+        padding: 4%;
+    }
+
+a {
+    text-decoration: none;
+    color: #EBCACA;
+    font-size: large;
+}
+
+    a:hover {
+        color: #031C32;
+    }
+
+h2 {
+    color: #fdf4f4;
+    margin-left: 10%;
+    margin-top: 20%;
+    font-weight: 700;
+}
+
+p {
+    color: #e4dede;
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+.p {
+    margin-top: 30%;
+    margin-left: 10%;
+}
+
+.icons {
+    margin-left: 10%;
+}
+
+img {
+    margin-right: 3%;
+}
+
+ul li.li {
+    color: #EBCACA;
+}
+
+.log ul {
+    display: flex;
+}
+
+    .log ul li {
+        padding-right: 8%;
+    }

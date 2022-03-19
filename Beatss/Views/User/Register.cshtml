@@ -1,0 +1,28 @@
+﻿@model Beatss.ViewModels.NewUserViewModel
+@Styles.Render("~/Content/SignCss")
+<title>Beats-Sign</title>
+@using (Html.BeginForm("Create", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{<div class="container">
+        <div class="sign_up_form">
+            <div class="sign_up">
+                <h3>Sign Up</h3>
+            </div>
+            @Html.TextBoxFor(b => b.user.Username, new { @class = "", placeholder = "USername" })
+            @Html.ValidationMessageFor(b => b.user.Username, "", new { @class = "text-danger" })
+
+            @Html.TextBoxFor(b => b.user.Email, new { @class = "", placeholder = "E-mail" })
+            @Html.ValidationMessageFor(b => b.user.Email, "", new { @class = "text-danger" })
+
+            @Html.PasswordFor(b => b.user.Password, new { @class = "", placeholder = "Password" })
+            @Html.ValidationMessageFor(b => b.user.Password, "", new { @class = "text-danger" })
+
+            <button class="btn" type="submit" id="btnreg">Submit</button>
+            <div class="log">Have an account?<span><a href="https://localhost:44306/User/Login">Log in</a></span>.</div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

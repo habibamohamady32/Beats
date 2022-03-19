@@ -1,0 +1,112 @@
+﻿@model Beatss.ViewModels.NewUserViewModel
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/ProfileCss")
+<link rel="stylesheet" href="https://use.typekit.net/ghm8wqj.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<title>Beats-Profile</title>
+<nav class="top flex align-center">
+    <div class="main" style="color: wheat; margin: 15px;">
+        <div class="Search-bar">
+            <input class="input_box" aria-label="search" type="text" placeholder="Search for Artists, Songs, or Podcasts">
+            <button class="submit"><i class="fas fa-search" aria-label="submit-search"></i></button>
+        </div>
+    </div>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="acc">
+            <img src="~/images/images/2x/baseline_account_circle_white_18dp.png">
+            <ul class="droplog">
+                <li style="color:white;">
+                    <a>
+                        @Html.LabelFor(u => u.user.Username)
+                    </a>
+                    <ul class="doo">
+                        <li class="li1" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;"><a href="https://localhost:44351/Home/Profile" style="font-size: 15px; margin-right: 20px;">Profile</a></li>
+                        <li class="li2" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;top: 245%;"><a href="javascript:document.getElementById('logoutForm').submit()" style="font-size: 15px; margin-right: 20px;">Log out</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+
+        </div>
+    }
+</nav>
+<aside>
+    <div class="conta">
+        <img src="~/images/images/cc.png" class="logg">
+        <h1 class="logo">Beats</h1>
+    </div>
+
+    <ul class="links">
+        <div class="bread">Music</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/outline_explore_white_18dp.png"></li>
+            <li><a href="https://localhost:44351/Home/HomePage" class="light-white-hover" id="ex2">Explore</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/mus.png"></li>
+            <li><a href="https://localhost:44351/Home/Songs" class="light-white-hover" class="ex2">Songs</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_library_music_white_18dp.png"></li>
+            <li><a href="https://localhost:44351/Home/Albums" class="light-white-hover" class="ex2">Album</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_star_white_18dp.png"></li>
+            <li><a href="https://localhost:44351/Home/Artists" class="light-white-hover" class="ex2">Artists</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_favorite_white_18dp.png"></li>
+            <li><a href="https://localhost:44351/Home/Liked" class="light-white-hover" class="ex2">Liked</a></li>
+        </div>
+
+    </ul>
+
+    <ul class="links">
+        <div class="bread">My PlayLists</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="#" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="#" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="#" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+
+    </ul>
+</aside>
+<div class="ta-app-wrapper">
+    <div class="ta-app">
+        <div class="inner">
+            <div class="topp">
+                <div class="img">
+                    <img src="~/images/images/account.png" class="im">
+                </div>
+
+                <div class="titles">
+                    <p class="pl">Profile</p>
+                    <h1 class="liked">@Html.LabelFor(u => u.user.Username)</h1>
+                    <p class="p2">3 Public Playlists. 2 Followers . 102 Following</p>
+                </div>
+            </div>
+
+
+            <div class="middle">
+            </div>
+        </div>
+    </div>
+</div>

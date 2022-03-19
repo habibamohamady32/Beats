@@ -1,0 +1,497 @@
+﻿@model Beatss.ViewModels.NewUserViewModel
+@{
+    ViewBag.Title = "Artists";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/ArtistsCss")
+<link rel="stylesheet" href="https://use.typekit.net/ghm8wqj.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<title>Beats-Artists</title>
+
+
+<nav class="top flex align-center">
+    <div class="main" style="color: wheat; margin: 15px;">
+        <div class="Search-bar">
+            <input class="input_box" aria-label="search" type="text" name="box" placeholder="Search for Artists, Songs, or Podcasts">
+            <button class="submit"><i class="fas fa-search" aria-label="submit-search"></i></button>
+        </div>
+    </div>
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        <div class="acc">
+            <img src="~/images/images/2x/baseline_account_circle_white_18dp.png">
+            <ul class="droplog">
+                <li style="color:white;">
+                    <a>@Html.DisplayNameFor(b => b.user.Username)</a>
+                    <ul class="doo">
+                        <li class="li1" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;"><a href="#" style="font-size: 15px; margin-right: 20px;">Profile</a></li>
+                        <li class="li2" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;top: 245%;"><a href="javascript:document.getElementById('logoutForm').submit()" style="font-size: 15px; margin-right: 20px;">Log out</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+
+        </div>
+    }
+</nav>
+<aside>
+    <div class="conta">
+        <img src="~/images/images/cc.png" class="logg">
+        <h1 class="logo">Beats</h1>
+    </div>
+    <ul class="links">
+        <div class="bread">Music</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/outline_explore_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/HomePage" class="light-white-hover" class="ex2">Explore</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/mus.png"></li>
+            <li><a href="https://localhost:44306/Home/Songs" class="light-white-hover" class="ex2">Songs</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_library_music_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Albums" class="light-white-hover" class="ex2">Album</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_star_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Artists" class="light-white-hover" class="ex2">Artists</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_favorite_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Liked" class="light-white-hover" class="ex2">Liked</a></li>
+        </div>
+
+    </ul>
+
+    <ul class="links">
+        <div class="bread">My PlayLists</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+    </ul>
+</aside>
+<div class="ta-app-wrapper">
+    <div class="ta-app">
+        <div class="ta-list-tittle flex align-center">
+            <h1 style="color: white;">Artists</h1>
+
+        </div>
+        <ul class="ta-track-list">
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://i.scdn.co/image/305c7c493ca5c108ade08dea6a169694db911644"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Maroon 5</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://www.esquireme.com/public/images/2019/01/08/ESQ---Jason-Derulo-3.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Jason Derulo</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://data.whicdn.com/images/129255193/original.png"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">MAGIC!</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(http://i60.fastpic.ru/big/2015/0127/6c/4ab8cb2a2655b9b81a4dad1cda617b6c.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Passengers</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://yt3.ggpht.com/ytc/AAUvwnjA19Ni8DqZVwMa4Ex6AxUwaqVMnfOEGwkQlJZ8y_c=s900-c-k-c0x00ffffff-no-rj"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Lady Gaga</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://mir-s3-cdn-cf.behance.net/projects/404/48f64d96932881.Y3JvcCwxMDgwLDg0NCwwLDE1Mg.png"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">The Weeknd</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://s2.glbimg.com/MOB0OCLTQw2JhDioNAHa8eQiNj8=/top/e.glbimg.com/og/ed/f/original/2020/08/16/brandon.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Brendon Urie</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://data.whicdn.com/images/325742349/original.jpg"></span></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Ariana Grande</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://pbs.twimg.com/media/EpT3dQYXEAMcoiD.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Shawn Mendes</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://www.tmrwmagazine.com/wp-content/uploads/2019/09/Charlie-Puth-Publicity-01-07-30-19.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Charlie Puth</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://i.pinimg.com/736x/83/ab/eb/83abeb5665e56f243cf7546db6b1b35b.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Bruno Mars</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://img.srgcdn.com/e//aEVtZTA3R0w1dEhtaVpFbmFEelEuanBn.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Katy Berry</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://www.rollingstone.com/wp-content/uploads/2018/06/rs-218135-adele-press-new-2015.jpg?resize=1800,1200&amp;w=1800"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Adele</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://www.songhall.org/images/uploads/exhibits/Michael_Jackson.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Michele Jackson</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-us.s3.amazonaws.com%2F4219e4fa-433b-11ea-a43a-c4b328d9061c?fit=scale-down&amp;source=next&amp;width=700"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Kesha</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(http://stoneyroads.com/wp-content/uploads/2018/04/lil-dicky-480x320.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Lil Dicky</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://media.npr.org/assets/img/2017/09/28/demi_lovato_03_017_sq-0bf7c082a68df5ddab4e31b04c097d5aa0656e47-s1000.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Demi Lovato</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://cae8b291f7a009bc3e401054-wceel7psqz6.netdna-ssl.com/wp-content/uploads/2019/11/Dua-Lipa-1-759x500.jpg?x79360"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Dua Lipa</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://i.pinimg.com/originals/73/d3/9f/73d39f39f80186a15ed40451b9d83c33.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Taylor Swift</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://conversationsabouther.net/wp-content/uploads/2018/08/one.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">one republic</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://townsquare.media/site/838/files/2020/01/coldplay.jpg?w=980&amp;q=75"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">ColdPlay</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://blog.siriusxm.com/wp-content/uploads/2020/04/AB_LOOK_27_0007-e1586444242709.jpg?w=940"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Sia</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://hairmotive.com/wp-content/uploads/2018/03/Miley-Cyrus-Haircut-with-Soft-Pink-Accents.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Miley Cyrus</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(http://scenenoise.com/Content/Artist/Elfar3i%20Noise%202.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">El Far3i</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://i.pinimg.com/originals/90/52/0e/90520e9c0baf971cedbf5fcd7e67d338.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Darren Criss</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://yt3.ggpht.com/ytc/AAUvwngM9X_zqKIWwJ36gNEMIuY9-x3R9iRZ0RNS3dGlMQ=s900-c-k-c0x00ffffff-no-rj"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Eminem</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://thepioneeronline.com/wp-content/uploads/2018/11/Freddie_Mercury_800.png"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Freddie Mercury</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://yt3.ggpht.com/ytc/AAUvwnhheBbk_iickpdFt8gymbqbxcWk44NSZvR9glBG8gA=s900-c-k-c0x00ffffff-no-rj"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Beyoncé</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://yt3.ggpht.com/ytc/AAUvwnhQURF0r88kVJF6V_AVHZo8YcFFBISbXTge8_PAPw=s900-c-k-c0x00ffffff-no-rj"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Halsey</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://www.xsnoize.com/wp-content/uploads/2019/09/TheScript_TheLastTime_LeadPressShotAndrewWhitton.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">The Script</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://jb.fm/wp-content/uploads/2019/04/sam-smith426-12-2018.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Sam Smith</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://dazedimg-dazedgroup.netdna-ssl.com/2435/azure/dazed-prod/1290/8/1298649.jpg"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Whitney Houston</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://media.socastsrm.com/wordpress/wp-content/blogs.dir/337/files/2019/11/TOP.png" )></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">twenty one pilots</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://www.xsnoize.com/wp-content/uploads/2019/10/CIGARETTES-AFTER-SEX-CRY-art-1.jpg" )></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Cigarettes after Sex</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://www.grammy.com/sites/com/files/styles/image_landscape_hero/public/muzooka/P%2521nk/P%2521nk_16_9_1581371529.jpg?itok=2EHEP9Gn"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">P!NK</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(data:image/jpeg;base64,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" )></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Travis Scott</a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div id="ta-player">
+    <div class="flex">
+        <section class="ta-player-info flex align-center">
+            <div class="ta-artwork " style="width: 70px;">
+                <img src="~/images/images/Death_of_a_Bachelor.jpg" style="width: 70px;">
+            </div>
+            <div class="ta-meta">
+                <a href="" class="title">La Devotee<br><span>Bredon Urie</span></a>
+            </div>
+        </section>
+        <section class="ta-player-progress flex align-center">
+            <span class="ta-time-current">
+                0:00
+            </span>
+            <div class="ta-player-progress-wrapper">
+                <div class="ta-player-progress-handler"></div>
+                <div class="ta-player-progress-foreground"></div>
+                <div class="ta-player-progress-background"></div>
+            </div>
+            <span class="ta-time-duration">
+                3:24
+            </span>
+            <section class="ta-player-controls align-center">
+                <button class="ta-prev"><i><img src="~/images/images/1x/sharp_skip_previous_black_18dp.png" alt=""></i></button>
+                <button class="ta-play"><i><img src="~/images/images/1x/sharp_play_arrow_black_18dp.png" alt=""></i></button>
+                <button class="ta-next"><i><img src="~/images/images/1x/sharp_skip_next_black_18dp.png" alt=""></i></button>
+            </section>
+            <section class="ta-player-cont align-center">
+                <button class="ta-repeat"><i><img src="~/images/images/1x/sharp_repeat_black_18dp.png" alt=""></i></button>
+                <button class="ta-shuffle"><i><img src="~/images/images/1x/sharp_shuffle_black_18dp.png" alt=""></i></button>
+                <button class="ta-addplaylist"><i><img src="~/images/images/1x/sharp_playlist_add_black_18dp.png" alt=""></i></button>
+                <button class="ta-liked"><i><img src="~/images/images/1x/sharp_favorite_black_18dp.png" alt=""></i></button>
+            </section>
+        </section>
+    </div>
+</div>
+
+

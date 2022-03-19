@@ -1,0 +1,392 @@
+﻿@model Beatss.ViewModels.NewUserViewModel
+@using Beatss.Models;
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/HomeCss")
+<link rel="stylesheet" href="https://use.typekit.net/ghm8wqj.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<title>Beats</title>
+
+<nav class="top flex align-center">
+    <div class="main" style="color: wheat; margin: 15px;">
+        <div class="Search-bar">
+            <input class="input_box" aria-label="search" type="text" placeholder="Search for Artists, Songs, or Podcasts">
+            <button class="submit"><i class="fas fa-search" aria-label="submit-search"></i></button>
+        </div>
+    </div>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="acc">
+            <img src="~/images/images/2x/baseline_account_circle_white_18dp.png">
+            <ul class="droplog">
+                <li style="color:white;">
+                    <a>
+                    </a>
+                    <ul class="doo">
+                        <li class="li1" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;"><a href="https://localhost:44351/Home/Profile" style="font-size: 15px; margin-right: 20px;">Profile</a></li>
+                        <li class="li2" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;top: 245%;"><a href="javascript:document.getElementById('logoutForm').submit()" style="font-size: 15px; margin-right: 20px;">Log out</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+
+        </div>
+    }
+</nav>
+<aside>
+    <div class="conta">
+        <img src="~/images/images/cc.png" class="logg">
+        <h1 class="logo">Beats</h1>
+    </div>
+
+    <ul class="links">
+        <div class="bread">Music</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/outline_explore_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/HomePage" class="light-white-hover" id="ex2">Explore</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/mus.png"></li>
+            <li><a href="https://localhost:44306/Home/Songs" class="light-white-hover" class="ex2">Songs</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_library_music_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Albums" class="light-white-hover" class="ex2">Album</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_star_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Artists" class="light-white-hover" class="ex2">Artists</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_favorite_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Liked" class="light-white-hover" class="ex2">Liked</a></li>
+        </div>
+
+    </ul>
+
+    <ul class="links">
+        <div class="bread">My PlayLists</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="#" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="#" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="#" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+
+    </ul>
+</aside>
+<div class="ta-app-wrapper">
+    <div class="ta-app">
+
+        <div class="column col-6 flex-column">
+            <div class="ta-list-tittle flex align-center">
+                <h1>Weekly Chart</h1>
+                <section class="right flex justify-end align-center">
+                    <a href="" class="light-white-hover" style="margin-right: 8px; margin-top: 11px;">Show all</a>
+                </section>
+            </div>
+            <ul class="ta-stat-board flex align-center">
+                <li>#</li>
+                <li>Title</li>
+                <li>Artist</li>
+            </ul>
+            <ul class="ta-stat-tracks flex align-center column col-6">
+                <li class="ta-stat-card column col-2 flex-column">
+                    <div class="dd">
+                        <div class="artwork">
+                            <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-000133009907-6z3nst-t500x500.jpg&quot;);"></span>
+
+                        </div>
+                        <div class="info">
+                            <div><a class="title white-primary-hover">Wildest Dreams</a></div>
+                            <div><a class="username light-white-hover">Taylor Swift</a></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="ta-stat-tracks flex align-center column col-6">
+                <li class="ta-stat-card column col-2 flex-column">
+                    <div class="dd">
+                        <div class="artwork">
+                            <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-Jhpjyur6iIIK-0-t500x500.jpg&quot;);"></span>
+                        </div>
+                        <div class="info">
+                            <div><a class="title white-primary-hover">Molly</a></div>
+                            <div><a class="username light-white-hover">Lil Dicky</a></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="column col-6 flex-column">
+            <div class="ta-list-tittle flex align-center">
+                <h1>Downloads</h1>
+                <section class="right flex justify-end align-center">
+                    <a href="" class="light-white-hover" style="margin-right: 8px; margin-top: 11px;">Show all</a>
+                </section>
+            </div>
+            <ul class="ta-stat-board flex align-center">
+                <li>#</li>
+                <li>Title</li>
+                <li>Artist</li>
+
+            </ul>
+            <ul class="ta-stat-tracks flex align-center column col-6">
+                <li class="ta-stat-card column col-2 flex-column">
+                    <div class="dd">
+                        <div class="artwork">
+                            <span style="        background-image: url(../../images/images/1565571830309.jpg);"></span>
+                        </div>
+                        <div class="info">
+                            <div><a class="title white-primary-hover">La Devotee</a></div>
+                            <div><a class="username light-white-hover">Brendon Urie</a></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="ta-stat-tracks flex align-center column col-6">
+                <li class="ta-stat-card column col-2 flex-column">
+                    <div class="dd">
+                        <div class="artwork">
+                            <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-yUQnVGiH3DyFh7IW-G3Dwjg-t500x500.jpg&quot;);"></span>
+                        </div>
+                        <div class="info">
+                            <div><a class="title white-primary-hover">Death Bed</a></div>
+                            <div><a class="username light-white-hover">Powfu Ft. beabadoobee</a></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="ta-list-tittle flex align-center">
+            <h1>Recently Played</h1>
+            <section class="right flex justify-end align-center">
+                <a href="" class="light-white-hover" style="margin-right: 8px; margin-top: 11px;">Show all</a>
+                <button class="light-white-hover flex"><img src="~/images/images/1x/round_arrow_back_ios_white_18dp.png"></button>
+                <button class="light-white-hover flex"><img src="~/images/images/1x/round_arrow_forward_ios_white_18dp.png"></button>
+            </section>
+
+        </div>
+        <ul class="ta-track-list">
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="        background-image: url(../../images/images/Death_of_a_Bachelor.jpg);"></span>
+                        <div class="hover flex align-center justify-center">
+                            <button class="ta-play-active">
+                                <i><img src="../images/2x/pau.png"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">La Devotee</a>
+                        <a class="username light-white-hover">Brendon Urie</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column playing">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-yUQnVGiH3DyFh7IW-G3Dwjg-t500x500.jpg&quot;);"></span>
+
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Death Bed</a>
+                        <a class="username light-white-hover">Powfu Ft. beabadoobee</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-rIJNNCwtUSF3-0-t500x500.jpg&quot);"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Without Me</a>
+                        <a class="username light-white-hover">Halsey</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-Jhpjyur6iIIK-0-t500x500.jpg&quot;);"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Molly</a>
+                        <a class="username light-white-hover"> Lil Dicky</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-000133009907-6z3nst-t500x500.jpg&quot;);"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Wildest Dreams</a>
+                        <a class="username light-white-hover">Taylor Swift</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-000243675479-i4axxw-t500x500.jpg&quot;);"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">يا ترى</a>
+                        <a class="username light-white-hover">Bahaa Sultan</a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <div class="ta-list-tittle flex align-center">
+            <h1>Trending</h1>
+            <section class="right flex justify-end align-center">
+                <a href="" class="light-white-hover" style="margin-right: 8px; margin-top: 11px;">Show all</a>
+                <button class="light-white-hover flex"><img src="~/images/images/1x/round_arrow_back_ios_white_18dp.png"></button>
+                <button class="light-white-hover flex"><img src="~/images/images/1x/round_arrow_forward_ios_white_18dp.png"></button>
+            </section>
+
+        </div>
+        <ul class="ta-track-list">
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://upload.wikimedia.org/wikipedia/en/9/9a/Lauv_-_Feelings.png);"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Feeling</a>
+                        <a class="username light-white-hover">Lauv</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://api.alphadata.fm/images/songs/86488367"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">How They Remember You</a>
+                        <a class="username light-white-hover">Rascal Flatts</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://i.insider.com/5c7803bfeb3ce848043dee02?width=1080&amp;format=jpeg);"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Sucker</a>
+                        <a class="username light-white-hover">Jonas Brothers</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(&quot;https://i1.sndcdn.com/artworks-Jhpjyur6iIIK-0-t500x500.jpg&quot;);"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Molly</a>
+                        <a class="username light-white-hover"> Lil Dicky</a>
+                    </div>
+                </div>
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://upload.wikimedia.org/wikipedia/en/a/a7/Shawn_Mendes_-_If_I_Can%27t_Have_You.png"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">If I Can’t Have You</a>
+                        <a class="username light-white-hover">Shawn Mendes</a>
+                    </div>
+                </div>
+
+            </li>
+            <li class="ta-track-card column col-2 flex-column">
+                <div class="inner">
+                    <div class="artwork">
+                        <span style="background-image: url(https://upload.wikimedia.org/wikipedia/en/a/a6/Lewis_Capaldi_-_Someone_You_Loved.png);"></span>
+                    </div>
+                    <div class="info">
+                        <a href="" class="title white-primary-hover">Lewis Capaldi</a>
+                        <a class="username light-white-hover">Someone You Loved</a>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<div id="ta-player">
+    <div class="  flex">
+        <section class="ta-player-info flex align-center">
+            <div class="ta-artwork " style="width: 70px;">
+                <span style="background-image: url(../../images/images/Death_of_a_Bachelor.jpg);"></span>
+            </div>
+            <div class="ta-meta">
+                <a href="" class="title">La Devotee<span>Bredon Urie</span></a>
+            </div>
+        </section>
+        <section class="ta-player-progress flex align-center">
+            <span class="ta-time-current">
+                0:00
+            </span>
+            <div class="ta-player-progress-wrapper">
+                <div class="ta-player-progress-handler"></div>
+                <div class="ta-player-progress-foreground"></div>
+                <div class="ta-player-progress-background"></div>
+            </div>
+            <span class="ta-time-duration">
+                3:24
+            </span>
+            <section class="ta-player-controls align-center">
+                <button class="ta-prev"><i><img src="~/images/images/1x/sharp_skip_previous_black_18dp.png" alt=""></i></button>
+                <button class="ta-play"><i><img src="~/images/images/1x/sharp_play_arrow_black_18dp.png" alt=""></i></button>
+                <button class="ta-next"><i><img src="~/images/images/1x/sharp_skip_next_black_18dp.png" alt=""></i></button>
+            </section>
+            <section class="ta-player-cont align-center">
+                <button class="ta-repeat"><i><img src="~/images/images/1x/sharp_repeat_black_18dp.png" alt=""></i></button>
+                <button class="ta-shuffle"><i><img src="~/images/images/1x/sharp_shuffle_black_18dp.png" alt=""></i></button>
+                <button class="ta-addplaylist"><i><img src="~/images/images/1x/sharp_playlist_add_black_18dp.png" alt=""></i></button>
+                <button class="ta-liked"><i><img src="~/images/images/1x/sharp_favorite_black_18dp.png" alt=""></i></button>
+            </section>
+        </section>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/HomeJS")
+
+

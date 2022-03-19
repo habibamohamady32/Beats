@@ -1,0 +1,381 @@
+﻿@{
+    ViewBag.Title = "Albums";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/AlbumCss")
+<link rel="stylesheet" href="https://use.typekit.net/ghm8wqj.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<title>Beats-Albums</title>
+
+
+<nav class="top flex align-center">
+    <div class="main" style="color: wheat; margin: 15px;">
+        <div class="Search-bar">
+            <input class="input_box" aria-label="search" type="text" name="box" placeholder="Search for Artists, Songs, or Podcasts">
+            <button class="submit"><i class="fas fa-search" aria-label="submit-search"></i></button>
+        </div>
+    </div>
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="acc">
+            <img src="~/images/images/2x/baseline_account_circle_white_18dp.png">
+            <ul class="droplog">
+                <li style="color:white;">
+                    <a>USername</a>
+                    <ul class="doo">
+                        <li class="li1" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;"><a href="#" style="font-size: 15px; margin-right: 20px;">Profile</a></li>
+                        <li class="li2" style="background-color:white;width:130px;opacity:0.7;line-height:40px;text-align:center;top: 245%;"><a href="javascript:document.getElementById('logoutForm').submit()" style="font-size: 15px; margin-right: 20px;">Log out</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    }
+</nav>
+<aside>
+    <div class="conta">
+        <img src="~/images/images/cc.png" class="logg">
+        <h1 class="logo">Beats</h1>
+    </div>
+    <ul class="links">
+        <div class="bread">Music</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/outline_explore_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/HomePage" class="light-white-hover" class="ex2">Explore</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/mus.png"></li>
+            <li><a href="https://localhost:44306/Home/Songs" class="light-white-hover" class="ex2">Songs</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_library_music_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Albums" class="light-white-hover" class="ex2">Album</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_star_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Artists" class="light-white-hover" class="ex2">Artists</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/round_favorite_white_18dp.png"></li>
+            <li><a href="https://localhost:44306/Home/Liked" class="light-white-hover" class="ex2">Liked</a></li>
+        </div>
+
+    </ul>
+
+    <ul class="links">
+        <div class="bread">My PlayLists</div>
+
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+        <div class="li">
+            <li><img class="ex1" src="~/images/images/1x/image.png"></li>
+            <li><a href="" class="light-white-hover" class="ex2">List 1</a></li>
+        </div>
+
+    </ul>
+</aside>
+<div class="ta-app-wrapper">
+    <div class="ta-app">
+
+        <div class="ta-list-tittle flex align-center">
+            <p class="alb">Popular Albums</p>
+            <section class="right flex justify-end align-center">
+                <button class="light-white-hover flex"><img src="~/images/images/1x/round_arrow_back_ios_white_18dp.png"></button>
+                <button class="light-white-hover flex"><img src="~/images/images/1x/round_arrow_forward_ios_white_18dp.png"></button>
+            </section>
+        </div>
+
+        <div class="conn">
+            <ul class="ta-track-list">
+
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://api.alphadata.fm/images/albums/10637103)"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Music To Be Murdered</a>
+                            <a class="username light-white-hover">Eminem</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://api.alphadata.fm/images/albums/10824853)"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Future Nostalgia</a>
+                            <a class="username light-white-hover">Dua Lipa</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span class="s" style="background-image: url(https://api.alphadata.fm/images/albums/9852769"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title  s white-primary-hover">Lover</a>
+                            <a class="username s light-white-hover">Taylor Swift</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://api.alphadata.fm/images/albums/10180130"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Manic</a>
+                            <a class="username light-white-hover">Halsey</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://api.alphadata.fm/images/albums/3714353"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Beauty Behind The Madness</a>
+                            <a class="username light-white-hover">The Weeknd</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://api.alphadata.fm/images/albums/8706707"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Invasion of Privacy</a>
+                            <a class="username light-white-hover">Cardi B</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://api.alphadata.fm/images/albums/8648227"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Beerbongs & Bentleys</a>
+                            <a class="username light-white-hover">Post Malone</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://api.alphadata.fm/images/albums/13703346"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Doo-wops & Hooligans</a>
+                            <a class="username light-white-hover">Bruno Mars</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://api.alphadata.fm/images/albums/9852262"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">The Search</a>
+                            <a class="username light-white-hover">NF</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.wikia.nocookie.net/panicatthedisco/images/5/5c/High_Hopes.jpeg/revision/latest?cb=20190725043757"></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">High Hopes </a>
+                            <a class="username light-white-hover">Panic at the Disco</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <hr style="color: white;  margin-top: 60px;">
+        <div class="ta-list-tittle flex align-center">
+            <p class="alb">Recommended</p>
+            <section class="right flex justify-end align-center">
+                <button class="light-white-hover flex"><img src="~/images/images/1x/round_arrow_back_ios_white_18dp.png"></button>
+                <button class="light-white-hover flex"><img src="~/images/images/1x/round_arrow_forward_ios_white_18dp.png"></button>
+            </section>
+        </div>
+
+        <div class="conn">
+            <ul class="ta-track-list">
+
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://assets3.thrillist.com/v1/image/2814938/381x254/scale;jpeg_quality=65.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Thank u Next</a>
+                            <a class="username light-white-hover">Ariana Grande</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.spin.com/files/2020/12/margo-price-thats-how-rumors-get-started-1607540564-1200x1200.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">That's How Rumors Get Started</a>
+                            <a class="username light-white-hover">Margo Price</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span class="s" style="background-image: url(https://static.spin.com/files/2020/12/soccer-mommy-color-theory-1607540599-1200x1200.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title  s white-primary-hover">Color Theory</a>
+                            <a class="username s light-white-hover">Soccer Mommy</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.spin.com/files/2020/12/thundercat-it-is-what-it-is-1607541063-1200x1200.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">It Is What It Is</a>
+                            <a class="username light-white-hover">Thundercat</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.spin.com/files/2020/12/hayley-williams-petals-for-armor-1607541516-1000x1000.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover"> Petals for Armor</a>
+                            <a class="username light-white-hover"> Hayley Williams</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.spin.com/files/2020/12/fleet-foxes-shore-1607541551.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Fleet Foxes</a>
+                            <a class="username light-white-hover">Shore</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.spin.com/files/2020/12/waxahatchee-saint-cloud-1607541591-1200x1200.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover"> Saint Cloud</a>
+                            <a class="username light-white-hover"> Waxahatchee</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.spin.com/files/2020/12/tame-impala-the-slow-rush-1607541642-1280x1280.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover"> The Slow Rush</a>
+                            <a class="username light-white-hover">Tame Impala</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.spin.com/files/2020/12/phoebe-bridgers-punisher-1607541686-1200x1200.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover"> Punisher</a>
+                            <a class="username light-white-hover">Phoebe Bridgers </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="ta-track-card column col-2 flex-column">
+                    <div class="inner">
+                        <div class="artwork">
+                            <span style="background-image: url(https://static.spin.com/files/2020/12/bartees-strange-live-forever-1607541869-1200x1200.jpg" )></span>
+                        </div>
+                        <div class="info">
+                            <a href="" class="title white-primary-hover">Live Forever</a>
+                            <a class="username light-white-hover">Bartees Strange</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="ta-player">
+    <div class="flex">
+        <section class="ta-player-info flex align-center">
+            <div class="ta-artwork " style="width: 70px;">
+                <span style="        background-image: url(~/images/images/Death_of_a_Bachelor.jpg);"></span>
+            </div>
+            <div class="ta-meta">
+                <a href="" class="title">La Devotee<span>Bredon Urie</span></a>
+            </div>
+        </section>
+        <section class="ta-player-progress flex align-center">
+            <span class="ta-time-current">
+                0:00
+            </span>
+            <div class="ta-player-progress-wrapper">
+                <div class="ta-player-progress-handler"></div>
+                <div class="ta-player-progress-foreground"></div>
+                <div class="ta-player-progress-background"></div>
+            </div>
+            <span class="ta-time-duration">
+                3:24
+            </span>
+            <section class="ta-player-controls align-center">
+                <button class="ta-prev"><i><img src="~/images/images/1x/sharp_skip_previous_black_18dp.png" alt=""></i></button>
+                <button class="ta-play"><i><img src="~/images/images/1x/sharp_play_arrow_black_18dp.png" alt=""></i></button>
+                <button class="ta-next"><i><img src="~/images/images/1x/sharp_skip_next_black_18dp.png" alt=""></i></button>
+            </section>
+            <section class="ta-player-cont align-center">
+                <button class="ta-repeat"><i><img src="~/images/images/1x/sharp_repeat_black_18dp.png" alt=""></i></button>
+                <button class="ta-shuffle"><i><img src="~/images/images/1x/sharp_shuffle_black_18dp.png" alt=""></i></button>
+                <button class="ta-addplaylist"><i><img src="~/images/images/1x/sharp_playlist_add_black_18dp.png" alt=""></i></button>
+                <button class="ta-liked"><i><img src="~/images/images/1x/sharp_favorite_black_18dp.png" alt=""></i></button>
+            </section>
+        </section>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/HomeJS")
